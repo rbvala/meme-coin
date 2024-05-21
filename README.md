@@ -1,4 +1,4 @@
-# MemeCoin Project
+# MemeCoin on Linea
 
 ## Overview
 
