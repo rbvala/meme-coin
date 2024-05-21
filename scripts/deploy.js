@@ -1,13 +1,12 @@
 // scripts/deploy.js
 async function main() {
-    const MemeCoin = await ethers.getContractFactory("MemeCoin");
-    console.log("Deploying MemeCoin...");
+    const MemeCoinFactory = await ethers.getContractFactory("MemeCoinFactory");
+    console.log("Deploying MemeCoinFactory...");
 
-    // Deploy the contract with an initial supply of 1,000,000 tokens (1e6 with 18 decimals)
-    const memeCoin = await MemeCoin.deploy(ethers.utils.parseUnits("1000000", 18));
+    const memeCoinFactory = await MemeCoinFactory.deploy();
+    await memeCoinFactory.deployed();
 
-    await memeCoin.deployed();
-    console.log("MemeCoin deployed to:", memeCoin.address);
+    console.log("MemeCoinFactory deployed to:", memeCoinFactory.address);
 }
 
 main().catch((error) => {
